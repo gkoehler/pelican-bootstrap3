@@ -33,11 +33,11 @@ body {
 #sidebar a {
     color: inherit;
 }
-
+/*
 i {
     margin-right: 10px;
 }
-
+*/
 a, a:hover {
     color: inherit;
 }
@@ -77,4 +77,36 @@ a, a:hover {
     text-align: inherit;
     white-space: inherit;
     border-radius: inherit;
+}
+
+/* GS customizations */
+
+.page-header {
+    margin-top:0px;
+}
+
+.entry-content .panel {
+    box-shadow: none;
+    margin-bottom: 0px;
+}
+
+.entry-content .panel-body {
+    box-shadow: none;
+    padding: 0px;
+}
+
+.entry-content .post-info {
+    color: #ccc;
+}
+
+/* give footer icons a little bit of space */
+footer i.fa {
+    margin-right:4px;
+    margin-left:3px;
+}
+
+/* typogrify makes caps smaller--this doesn't work well for me (ex: AT&T turns into <span class="caps">AT</span>&T) */
+/* let's undo this feature here, since I don't see another way to customize/fix it */
+.caps {
+    font-size: 1em;
 }
