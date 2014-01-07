@@ -110,3 +110,7 @@ footer i.fa {
 .caps {
     font-size: 1em;
 }
+
+/* used by mailchimp */
+#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+

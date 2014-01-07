@@ -1,25 +1,41 @@
 <footer>
     <div class="container">
-        <hr>
-        {#<p class="pull-right"><i class="icon-arrow-up"></i> <a href="#">Back to top</a></p>#}
+        <div class="row">
+            <div class="col-lg-8 col-md-10">
+                <hr>
+                {#<p class="pull-right"><i class="icon-arrow-up"></i> <a href="#">Back to top</a></p>#}
+                
+                {% if MAILCHIMP_ACTION %}
+                    
+                        <form action="{{ MAILCHIMP_ACTION }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate pull-right" target="_blank" novalidate>
+                            
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_35c578517ebc503f8e251e900_cf1094a3e4" value=""></div>
+                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                        </form>
+                    
+                {% endif %}
+                
+                {% if articles %}
+                    {% set copy_date = articles[0].date.strftime('%Y') %}
+                {% else %}
+                    {% set copy_date = '' %}
+                {% endif %}
 
-        {% if articles %}
-            {% set copy_date = articles[0].date.strftime('%Y') %}
-        {% else %}
-            {% set copy_date = '' %}
-        {% endif %}
+                <p>&copy; {{ copy_date }} {{ AUTHOR }}
+                
+                {% if GITHUB_USERNAME %}
+                    <a href="https://github.com/{{ GITHUB_USERNAME }}"><i class="fa fa-github"></i></a>
+                {% endif %}
+                {% if TWITTER_USERNAME %}
+                    <a href="https://twitter.com/{{ TWITTER_USERNAME }}"><i class="fa fa-twitter"></i></a>
+                {% endif %}
 
-        <p>&copy; {{ copy_date }} {{ AUTHOR }}
-        
-        {% if GITHUB_USERNAME %}
-            <a href="https://github.com/{{ GITHUB_USERNAME }}"><i class="fa fa-github"></i></a>
-        {% endif %}
-        {% if TWITTER_USERNAME %}
-            <a href="https://twitter.com/{{ TWITTER_USERNAME }}"><i class="fa fa-twitter"></i></a>
-        {% endif %}
-
-        {#  &middot;  Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>#} </p>
+                {#  &middot;  Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+                    <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+                    <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>#} </p>
+            </div>
+        </div>
     </div>
 </footer>
