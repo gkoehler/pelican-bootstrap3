@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+    <p class="lead">App development and consulting, specializing in Windows 10, iOS, and Android. <a href="/pages/contact.html">You can contact us here</a>, or visit us in our Aksarben Village office.</p>
+
     {% if articles %}
         {% for article in (articles_page.object_list if articles_page else articles) %}
             <article>

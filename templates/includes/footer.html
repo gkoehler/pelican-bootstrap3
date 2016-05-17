@@ -1,7 +1,7 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-10">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <hr>
                 {#<p class="pull-right"><i class="icon-arrow-up"></i> <a href="#">Back to top</a></p>#}
                 
@@ -24,7 +24,7 @@
                 {% endif %}
 
                 <p>&copy; {{ copy_date }} {{ AUTHOR }}
-                
+
                 {% if GITHUB_USERNAME %}
                     <a href="https://github.com/{{ GITHUB_USERNAME }}"><i class="fa fa-github"></i></a>
                 {% endif %}
